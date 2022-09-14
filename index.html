@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  
+    <script src="style1.js"></script>
+    <script src="jquery.js"></script>
+ 
+    
+    
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .box{
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Style the  restaurant name header */
+      header {
+        background-color: rgb(221, 27, 205);
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+
+      /* Container for  tableflexboxes */
+      section {
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      /* Style the navigation menu */
+      nav {
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        background: rgb(248, 191, 241);
+        padding: 20px;
+        border-style: ;
+      }
+
+      
+
+      /* Style the menu  content */
+      article {
+        -webkit-flex: 3;
+        -ms-flex: 3;
+        flex: 3;
+        background-color: rgb(248, 191, 241);
+        padding: 10px;
+        border: left 3mm;
+        border-style: double;
+      }
+
+      /* Style the footer */
+      footer {
+        background-color: rgb(221, 27, 205);
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      /* to make the page responsive*/
+      @media (max-width: 600px) {
+        section {
+          -webkit-flex-direction: column;
+          flex-direction: column;
+        }
+      }
+      
+}
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <h2>Zemoso Restaurant App</h2>
+    </header>
+
+    <section>
+      <nav>
+        
+        
+    <div class="container" style="position: relative" id="container">
+        <div class="tables">
+          <h1>Tables</h1>
+          <div class="search">
+            <input
+              type="text"
+              onkeyup="searchTables()"
+              placeholder="Search table"
+              id="tablesSearch"
+            />
+          </div>
+          <div id="tables">
+            <div class="table" id="table-1">
+              <h2 class="table-name-tag">Table-1</h2>
+              <div>
+                <p>
+                  Rs.<span id="total-price-1">0</span> | Total items:
+                  <span id="total-items-1">0</span>
+                </p>
+              </div>
+            </div>
+            <div class="table" id="table-2">
+              <h2 class="table-name-tag">Table-2</h2>
+              <div>
+                <p>
+                  Rs.<span id="total-price-2">0</span> | Total items:
+                  <span id="total-items-2">0</span>
+                </p>
+              </div>
+            </div>
+            <div class="table" id="table-3">
+              <h2 class="table-name-tag">Table-3</h2>
+              <div>
+                <p>
+                  Rs.<span id="total-price-3">0</span> | Total items:
+                  <span id="total-items-3">0</span>
+                </p>
+              </div>
+              </div>
+              </div>
+              <div class="table" id="table-4">
+                <h2 class="table-name-tag">Table-4</h2>
+                <div>
+                  <p>
+                    Rs.<span id="total-price-4">0</span> | Total items:
+                    <span id="total-items-4">0</span>
+                  </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+     
+
+      <article>
+       
+        <div class="menu">
+            <h1>Menu</h1>
+            <div class="searchR">
+              <input
+                type="text"
+                id="menuSearch"
+                onkeyup="searchMenu()"
+                placeholder="Search menu.., by food"
+              />
+            </div>
+            <div id="menu-elements">
+              <p id="demo"></p>
+              <div class="menu-items" id="menu-item" draggable="true">
+                <h2>Hummus with Pita Bread</h2>
+                <div>
+                  <p style="margin-top: 16px; margin-bottom: 48px">450.00</p>
+                </div>
+              </div>
+              <div class="menu-items" id="menu-item" draggable="true">
+                <h2>French Fries</h2>
+                <div>
+                  <p style="margin-top: 16px; margin-bottom: 48px">105.00</p>
+                </div>
+              </div>
+              <div class="menu-items" id="menu-item" draggable="true">
+                <h2>Burrito Bowl</h2>
+                <div>
+                  <p style="margin-top: 16px; margin-bottom: 48px">350.00</p>
+                </div>
+              </div>
+              <div class="menu-items" id="menu-item" draggable="true">
+                <h2>Mexican Tacos</h2>
+                <div>
+                  <p style="margin-top: 16px; margin-bottom: 48px">200.00</p>
+                </div>
+              </div>
+              <div class="menu-items" id="menu-item" draggable="true">
+                <h2>Churros</h2>
+                <div>
+                  <p style="margin-top: 16px; margin-bottom: 48px">135.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+                     
+       
+          
+      </article>
+    </section>
+
+    <footer>
+      <p>Making ordering easy!</p>
+    </footer>
+
+    
+    <div class="order-details" id="order-details" style="opacity: 0">
+        <div
+          id="order-label"
+          style="
+            display: flex;
+            background-color: rgb(219, 52, 149);
+            box-sizing: border-box;
+            justify-content: space-between;
+            padding-left: 8px;
+            padding-right: 24px;
+          "
+        >
+          <h4 style="color: rgb(247, 27, 228); font-weight: 500">
+            <span id="table-no">Table-1</span> | Order Details
+          </h4>
+          <h4 style="color:rgb(247, 27, 228); font-weight: 500" id="close-button">X</h4>
+        </div>
+        <div style="background-color: rgb(226, 209, 226); box-sizing: border-box">
+          <table
+            id="orders"
+            style="padding: 16px 16px 0px 16px; box-sizing: border-box"
+          >
+          </table>
+        </div>
+        <div class="button-div">
+          <button id="bill">CLOSE SESSION (GENERATE BILL)</button>
+        </div>
+      </div>
+      <div class="check-out" id="check-out" style='opacity: 0; visibility: hidden;'>
+         <div
+          id="order-label"
+          style="
+            display: flex;
+            background-color:  rgb(219, 52, 149;
+            box-sizing: border-box;
+            justify-content: space-between;
+            padding-left: 8px;
+            padding-right: 24px;
+          "
+        >
+          <h4 style="color:  rgb(223, 193, 220); font-weight: 500">
+            Checkout Details
+          </h4>
+          <h4 style="color:  rgb(211, 173, 208); font-weight: 500" id="close-button-checkout">X</h4>
+        </div>
+        <div style="background-color: rgb(218, 111, 218); box-sizing: border-box">
+          <table
+            id="check-out-orders" class="checkout-table"
+            style="padding: 0px 16px 0px 16px; box-sizing: border-box"
+          >
+          </table>
+        </div>  
+      </div>
+      <script src="script.js"></script>
+      </body>
+      </html>
